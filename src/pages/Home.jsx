@@ -1,4 +1,6 @@
 import { useNavigate } from 'react-router-dom';
+import fondo from '../assets/ImagenFondo.png';
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -9,7 +11,7 @@ const Home = () => {
         {/* Imagen a la izquierda */}
         <div className="w-full lg:w-1/2 relative overflow-hidden rounded-3xl shadow-2xl">
           <img
-            src="https://files.oaiusercontent.com/file-PyTT9JJUM3ma7b0AU31SNSCd?se=2024-10-31T17%3A59%3A49Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D5ad483c6-bcb3-48db-9156-813b7df4d406.webp&sig=ctCnMQpP8jtHRVo1u/V/GehGCaG9JuK7sfVozghYqRk%3D"
+            src={fondo}
             alt="Gana Como Loco Promoción"
             className="w-full h-full object-cover"
           />

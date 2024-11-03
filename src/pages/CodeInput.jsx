@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import fondo2 from '../assets/ImagenFondo2.png';
 
 const CodeInput = () => {
     const [code, setCode] = useState('');
@@ -22,11 +23,20 @@ const CodeInput = () => {
         <div className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-black to-gray-900">
             {/* Fondo interactivo */}
             <div className="absolute inset-0 overflow-hidden z-0">
+                {/* Gradiente de superposición */}
                 <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-purple-900 via-black to-gray-900 opacity-70"></div>
-                <div className="absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none bg-[url('https://files.oaiusercontent.com/file-6YzLu1qjLZwOVcFTTS35vj2V?se=2024-10-31T20%3A10%3A57Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0a8b4a21-4e8b-4d47-a04b-a6c079a29ae0.webp&sig=JNDVCin0FxzbTQDHZ5xoIpTeCCC9Y%2B5M6xSKF%2Bm9grA%3D')] opacity-30"></div>
+                
+                {/* Fondo con la imagen local */}
+                <div
+                    className="absolute top-0 left-0 right-0 bottom-0 z-10 pointer-events-none bg-cover bg-center opacity-30"
+                    style={{ backgroundImage: `url(${fondo2})` }} // Uso correcto de la variable fondo2
+                ></div>
+
+                {/* Capa de partículas (opcional) */}
                 <div className="absolute w-full h-full bg-particle-pattern opacity-50 z-0"></div>
             </div>
 
+            {/* Contenido principal */}
             <div className="relative z-10 p-10 bg-gradient-to-br from-gray-800 via-gray-900 to-black rounded-3xl shadow-2xl w-full max-w-md transition transform hover:scale-105 hover:shadow-[0px_0px_20px_10px_rgba(255,255,255,0.1)]">
                 <h2 className="text-4xl text-center text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-600 font-extrabold mb-6">
                     Canjea tu Código Exclusivo

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import API from '../api/api';
+import fondo2 from '../assets/ImagenFondo2.png';
 
 const Register = () => {
     const [formData, setFormData] = useState({
@@ -35,11 +36,18 @@ const Register = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-cover bg-center"
-            style={{ backgroundImage: `url('https://files.oaiusercontent.com/file-6YzLu1qjLZwOVcFTTS35vj2V?se=2024-10-31T20%3A10%3A57Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D0a8b4a21-4e8b-4d47-a04b-a6c079a29ae0.webp&sig=JNDVCin0FxzbTQDHZ5xoIpTeCCC9Y%2B5M6xSKF%2Bm9grA%3D')` }}>
-            <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-2xl w-full max-w-lg">
+        <div
+            className="min-h-screen flex items-center justify-center bg-cover bg-center relative"
+            style={{ backgroundImage: `url(${fondo2})` }}
+        >
+            {/* Capa de opacidad */}
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+
+            {/* Contenedor del formulario */}
+            <div className="bg-white bg-opacity-90 p-8 rounded-lg shadow-2xl w-full max-w-lg relative z-10">
                 <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">Crear Cuenta</h2>
                 {error && <p className="text-red-500 mb-4 text-center">{error}</p>}
+                
                 <form onSubmit={handleSubmit}>
                     {/* Nombre */}
                     <div className="mb-4">
@@ -52,6 +60,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Fecha de nacimiento */}
                     <div className="mb-4">
                         <input
@@ -63,6 +72,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Cédula */}
                     <div className="mb-4">
                         <input
@@ -74,6 +84,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Email */}
                     <div className="mb-4">
                         <input
@@ -85,6 +96,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Celular */}
                     <div className="mb-4">
                         <input
@@ -96,6 +108,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Ciudad */}
                     <div className="mb-4">
                         <input
@@ -107,6 +120,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Contraseña */}
                     <div className="mb-6">
                         <input
@@ -118,6 +132,7 @@ const Register = () => {
                             onChange={handleChange}
                         />
                     </div>
+
                     {/* Botón de registro */}
                     <button
                         type="submit"
